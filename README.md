@@ -122,8 +122,12 @@ That calculation is done in O(1) speed.
 
 The execution time of *getTemporalCounterData()* does not grow with the amount of put() calls, instead, it grows according to the Period's size.
 
-For a Period of 30 DAYs, the size is '30', so *getTemporalCounterData()* will execute in O(30), which can be considered as O(1) since it is a constant execution time, independent from N size. For a Period of 4 SECONDs, the execution time is O(4), and so on.
+For a Period of 30 DAYs, *getTemporalCounterData()* will execute in O(30). That is be considered as O(1) because it is a constant execution time, independent from the size of N. For a Period of 4 SECONDs, the execution time is O(4), and so on.
 
  
+##### Persistence Layer
 
+Unfortunately I could not fully implement a persistence layer, but I created a class called *PersistenceService* providing the methods necessary to persist and retrieve the data. The other classes are already calling the *PersistenceService* methods in the appropriate moments.
+
+My intention was to persist the data in a Document database, like Dynamodb. I would index by the 'occurrenceAt' field so I could retrieve the data by time range.
 

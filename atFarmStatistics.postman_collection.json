@@ -1,0 +1,62 @@
+{
+	"variables": [],
+	"info": {
+		"name": "atFarmStatistics",
+		"_postman_id": "47d92153-90f3-1133-4c35-e98e07f60598",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post field conditions",
+			"request": {
+				"url": "http://localhost:8080/field-conditions",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"occurrenceAt\": \"2019-07-28T23:01:43+0000\",\n\t\"vegetation\": 1.001\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post field conditions v2",
+			"request": {
+				"url": "http://localhost:8080/field-conditions/v2",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"occurrenceAt\": \"2019-07-27T23:01:43+0000\",\n\t\"conditions\":{\n\t\t\"nitrogen\": 2,\n\t\t\"carbon\": 0.001\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get field-conditions",
+			"request": {
+				"url": "http://localhost:8080/field-conditions",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

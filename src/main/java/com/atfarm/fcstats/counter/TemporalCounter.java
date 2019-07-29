@@ -71,8 +71,8 @@ public class TemporalCounter {
 			
 			TemporalCounterData temporalCounterData = new TemporalCounterData(consolidatedCounter.getCounterData()); 
 			temporalCounterData.setNumberOfCountersUsed(validCounters.size());
-			temporalCounterData.setOldestCounterDateKey(validCounters.firstKey());
-			temporalCounterData.setYoungestCounterDateKey(validCounters.lastKey());
+			temporalCounterData.setStartDateKey(validCounters.firstKey());
+			temporalCounterData.setEndDateKey(validCounters.lastKey());
 			temporalCounterData.setPeriod(period);			
 			
 			return temporalCounterData;

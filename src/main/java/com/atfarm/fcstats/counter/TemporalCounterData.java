@@ -6,9 +6,9 @@ public class TemporalCounterData extends CounterData {
 	
 	private int numberOfCountersUsed;
 	
-	private String oldestCounterDateKey;
+	private String startDateKey;
 	
-	private String youngestCounterDateKey;
+	private String endDateKey;
 	
 	private Period period;
 	
@@ -22,11 +22,11 @@ public class TemporalCounterData extends CounterData {
 	}	
 
 	TemporalCounterData(Long count, BigDecimal sum, Double min, Double max, int nCounters,
-			String firstCounterDateKey, String lastCounterDateKey, Period period) {
+			String startDateKey, String endDateKey, Period period) {
 		super(count, sum, min, max);
 		this.numberOfCountersUsed = nCounters;
-		this.oldestCounterDateKey = firstCounterDateKey;
-		this.youngestCounterDateKey = lastCounterDateKey;
+		this.startDateKey = startDateKey;
+		this.endDateKey = endDateKey;
 		this.period = period;
 	}
 
@@ -46,24 +46,24 @@ public class TemporalCounterData extends CounterData {
 	 * The date key associated with the oldest counter of the period.
 	 * @return
 	 */
-	public String getOldestCounterDateKey() {
-		return oldestCounterDateKey;
+	public String getStartDateKey() {
+		return startDateKey;
 	}
 
-	void setOldestCounterDateKey(String firstCounterDateKey) {
-		this.oldestCounterDateKey = firstCounterDateKey;
+	void setStartDateKey(String firstCounterDateKey) {
+		this.startDateKey = firstCounterDateKey;
 	}
 
 	/**
 	 * The date key associated with the youngest (most recent) counter of the period.
 	 * @return
 	 */
-	public String getYoungestCounterDateKey() {
-		return youngestCounterDateKey;
+	public String getEndDateKey() {
+		return endDateKey;
 	}
 	
-	void setYoungestCounterDateKey(String lastCounterDateKey) {
-		this.youngestCounterDateKey = lastCounterDateKey;
+	void setEndDateKey(String lastCounterDateKey) {
+		this.endDateKey = lastCounterDateKey;
 	}
 
 	/**
@@ -80,8 +80,8 @@ public class TemporalCounterData extends CounterData {
 
 	@Override
 	public String toString() {
-		return "TemporalCounterData [numberOfCountersUsed=" + numberOfCountersUsed + ", oldestCounterDateKey=" + oldestCounterDateKey
-				+ ", youngestCounterDateKey=" + youngestCounterDateKey + ", period=" + period + ", count=" + count
+		return "TemporalCounterData [numberOfCountersUsed=" + numberOfCountersUsed + ", startDateKey=" + startDateKey
+				+ ", endDateKey=" + endDateKey + ", period=" + period + ", count=" + count
 				+ ", sum=" + sum + ", min=" + min + ", max=" + max + ", creationDate=" + creationDate + "]";
 	}
 	

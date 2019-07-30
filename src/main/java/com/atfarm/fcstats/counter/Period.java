@@ -50,7 +50,7 @@ public class Period {
 	}	
 	
 	/**
-	 * Returns the start date of the period given and endDate. The time information irrelevant for the period type is zeroed.
+	 * Returns the start date of the period given an endDate. The time information irrelevant for the period type is zeroed.
 	 * Example: When endDate corresponds to 2019-07-27T23:01:43+0000 (ISO_8601) this the dates represented in ISO_8601 that
 	 * startDate() would return for different Periods:
 	 * 	 
